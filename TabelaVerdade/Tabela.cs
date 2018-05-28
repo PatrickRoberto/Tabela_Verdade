@@ -28,10 +28,14 @@ namespace TabelaVerdade
     {
         Entrada[] entradas;
         bool[,] tab;
+        int qtdLinha, qtdColuna;
+
 
         public Tabela(int colunas)
         {
-            this.tab = new bool[linhas, colunas];
+            this.qtdLinha = CalcularLinhas(colunas);
+            this.qtdColuna = colunas;
+            this.tab = new bool[qtdLinha, qtdColuna];
 
             this.MontarTabela(tab);
         }
@@ -49,7 +53,10 @@ namespace TabelaVerdade
             throw new NotImplementedException();
         }
 
-
+        private int CalcularLinhas(int col)
+        {
+            return (int)Math.Pow(2, col);
+        }
         
     }
 }

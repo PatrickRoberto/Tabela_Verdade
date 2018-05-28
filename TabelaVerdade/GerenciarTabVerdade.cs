@@ -12,6 +12,7 @@ namespace TabelaVerdade
         Entrada[] entr;
         Preposicao prep;
 
+        #region Contrutores
         //Recebe uma preposição e a partir dela faz as validações necessarias
         public GerenciarTabVerdade(Preposicao prep)
         {
@@ -43,6 +44,9 @@ namespace TabelaVerdade
         {
             throw new NotImplementedException();
         }
+#endregion
+
+        
 
     }
 }

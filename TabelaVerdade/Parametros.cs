@@ -6,15 +6,6 @@ using System.Threading.Tasks;
 
 namespace TabelaVerdade
 {
-    public enum TipParametro
-    {
-        valor = 1,
-        operacao = 2,
-        preposica = 3
-    }
-
-    
-
     /// <summary>
     /// Aqui será todas as classes publics
     /// </summary>
@@ -28,24 +19,41 @@ namespace TabelaVerdade
             this.tipo = t;
         }
 
-        public abstract void Imprimir();
+        public abstract string Imprimir();
 
         
 
 
     }
 
+    public class ParEntr : Parametro
+    {
+        string valor { get; }
+
+        public ParEntr(string nValor) : base(TipParametro.valor)
+        {
+            this.valor = nValor;
+        }
+
+        public override string Imprimir()
+        {
+            return valor;
+            throw new NotImplementedException();
+        }
+    }
+
     public class ParValor : Parametro
     {
         bool valor { get; }
 
-        public ParValor(bool nvalor) : base(TipParametro.valor)
+        public ParValor(bool nValor) : base(TipParametro.valor)
         {
-            this.valor = nvalor;
+            this.valor = nValor;
         }
 
-        public override void Imprimir()
+        public override string Imprimir()
         {
+            return "";
             throw new NotImplementedException();
         }
     }
@@ -54,13 +62,14 @@ namespace TabelaVerdade
     {
         TipOperacoes valor { get; }
 
-        public ParOperacao(TipOperacoes nvalor) : base(TipParametro.operacao)
+        public ParOperacao(TipOperacoes nValor) : base(TipParametro.operacao)
         {
-            this.valor = nvalor;
+            this.valor = nValor;
         }
 
-        public override void Imprimir()
+        public override string Imprimir()
         {
+            return "";
             throw new NotImplementedException();
         }
     }
@@ -69,13 +78,14 @@ namespace TabelaVerdade
     {
         Preposicao valor { get; }
 
-        public ParPreposicao(Preposicao nvalor) : base(TipParametro.preposica)
+        public ParPreposicao(Preposicao nValor) : base(TipParametro.preposica)
         {
-            this.valor = nvalor;
+            this.valor = nValor;
         }
 
-        public override void Imprimir()
+        public override string Imprimir()
         {
+            return "";
             throw new NotImplementedException();
         }
 

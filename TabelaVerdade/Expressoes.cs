@@ -6,25 +6,36 @@ using System.Threading.Tasks;
 
 namespace TabelaVerdade
 {
-    public enum TipOperacoes
-    {
-        //Comuns
-        NOT = 1,
-        AND = 2,
-        OR = 3,
-        IF = 4,
-        IFTHEN = 5,
-        //Diferenciados
-        NAND = 6,
-        NOR = 7,
-        XOR = 8,
-        XNOR = 9
-
-    }
-
     public class Operacoes
     {
-        
+        public bool Calculo(bool P1, bool P2, TipOperacoes op)
+        {
+
+            switch (op)
+            {
+                case TipOperacoes.AND:
+                    return Expressoes.And(P1, P2);
+                case TipOperacoes.OR:
+                    return Expressoes.Or(P1, P2);
+                case TipOperacoes.IF:
+                    return Expressoes.Iff(P1, P2);
+                case TipOperacoes.IFTHEN:
+                    return Expressoes.IfThen(P1, P2);
+                //case TipOperacoes.NAND:
+                //    return Expressoes.N(P1, P2);
+                //case TipOperacoes.AND:
+                //    return Expressoes.Na(P1, P2);
+                //case TipOperacoes.AND:
+                //    return Expressoes.And(P1, P2);
+                //case TipOperacoes.AND:
+                //    return Expressoes.And(P1, P2);
+                default:
+                    throw new NotImplementedException();
+
+            }
+
+        }
+
 
     }
 

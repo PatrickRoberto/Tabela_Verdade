@@ -11,86 +11,92 @@ namespace TabelaVerdade
     {
         public static void Main(string[] args)
         {
-
-                        
-            bool[,] tabela = CriarTabela();
-
-            byte op = 0;
-
-            do
+            bool x = true;
+            if (x)
             {
-                #region Cabeçalho PUC
-                Console.WriteLine(" PONTIFICIA UNIVERSIDADE CATOLICA DE MINAS GERAIS");
-                Console.WriteLine(" TRABALHO INTERDISCIPLINAR");
-                Console.WriteLine(" 1o PERIODO - SISTEMAS DE INFORMACAO");
-                Console.Write("\n");
-                #endregion
+                
 
-                #region Proposicao do trabalho
-                Console.Write("\n As tabelas verdade que sao mostradas no trabalho sao resultados da seguinte proposicao:\n");
-                Console.Write("\n IF (P1 AND P3)");
-                Console.Write("\n THEN (IF P4");
-                Console.Write("\n       THEN T1");
-                Console.Write("\n       ELSE T2)");
-                Console.Write("\n ELSE (IF (NOT P3)");
-                Console.Write("\n       THEN (P1 AND T3)");
-                Console.Write("\n       ELSE (P2 AND (NOT P5) AND T4))");
-                Console.WriteLine("\n");
-                #endregion
+            }
+            else
+            {
+                bool[,] tabela = CriarTabela();
 
-                #region Menu de Operaçõs
-                Console.Write("\n Atencao para a visualizacao correta da tabela em tela!!!");
-                Console.WriteLine("\n Aumente a largura do buffer do console para 240 e a altura para 1100.");
+                byte op = 0;
 
-                Console.WriteLine("\n Escolha a opcao desejada:\n");
-                Console.WriteLine(" 1 - Criar tabela verdade em arquivo. (9 variaveis e 8 conectivos)");
-                Console.WriteLine(" 2 - Criar tabela verdade em tela. (9 variaveis e 8 conectivos)");
-                Console.WriteLine(" 3 - Criar tabela verdade e mostrar apenas combinacoes que resulte a proposicao em verdadeira.");
-                Console.WriteLine(" 4 - Escolher conectivo para teste individual.");
-                Console.WriteLine(" 0 - Sair\n");
-                Console.Write(" Sua escolha => ");
-                try
+                do
                 {
-                    op = Convert.ToByte(Console.ReadLine());
-                }
-                catch (OverflowException)
-                {
-                    op = 5;
-                }
+                    #region Cabeçalho PUC
+                    Console.WriteLine(" PONTIFICIA UNIVERSIDADE CATOLICA DE MINAS GERAIS");
+                    Console.WriteLine(" TRABALHO INTERDISCIPLINAR");
+                    Console.WriteLine(" 1o PERIODO - SISTEMAS DE INFORMACAO");
+                    Console.Write("\n");
+                    #endregion
 
-                switch (op)
-                {
-                    case 1:
-                        EscreverArquivo(ref tabela);
-                        Console.ReadKey();
-                        break;
-                    case 2:
-                        EscreverTela(ref tabela);
-                        Console.ReadKey();
-                        break;
-                    case 3:
-                        EscreverVerdadeiras(ref tabela);
-                        Console.ReadKey();
-                        break;
-                    case 4:
-                        TesteIndividual();
-                        break;
-                    case 0:
-                        Console.Write("\n Voce escolheu sair!");
-                        Console.ReadKey();
-                        break;
-                    default:
-                        Console.WriteLine("\n ERRO!!!");
-                        Console.WriteLine(" Digito invalido!\n");
-                        Console.ReadKey();
-                        break;
-                }
+                    #region Proposicao do trabalho
+                    Console.Write("\n As tabelas verdade que sao mostradas no trabalho sao resultados da seguinte proposicao:\n");
+                    Console.Write("\n IF (P1 AND P3)");
+                    Console.Write("\n THEN (IF P4");
+                    Console.Write("\n       THEN T1");
+                    Console.Write("\n       ELSE T2)");
+                    Console.Write("\n ELSE (IF (NOT P3)");
+                    Console.Write("\n       THEN (P1 AND T3)");
+                    Console.Write("\n       ELSE (P2 AND (NOT P5) AND T4))");
+                    Console.WriteLine("\n");
+                    #endregion
 
-                Console.Clear();
-                #endregion
+                    #region Menu de Operaçõs
+                    Console.Write("\n Atencao para a visualizacao correta da tabela em tela!!!");
+                    Console.WriteLine("\n Aumente a largura do buffer do console para 240 e a altura para 1100.");
 
-            } while (op != 0);
-            
+                    Console.WriteLine("\n Escolha a opcao desejada:\n");
+                    Console.WriteLine(" 1 - Criar tabela verdade em arquivo. (9 variaveis e 8 conectivos)");
+                    Console.WriteLine(" 2 - Criar tabela verdade em tela. (9 variaveis e 8 conectivos)");
+                    Console.WriteLine(" 3 - Criar tabela verdade e mostrar apenas combinacoes que resulte a proposicao em verdadeira.");
+                    Console.WriteLine(" 4 - Escolher conectivo para teste individual.");
+                    Console.WriteLine(" 0 - Sair\n");
+                    Console.Write(" Sua escolha => ");
+                    try
+                    {
+                        op = Convert.ToByte(Console.ReadLine());
+                    }
+                    catch (OverflowException)
+                    {
+                        op = 5;
+                    }
+
+                    switch (op)
+                    {
+                        case 1:
+                            EscreverArquivo(ref tabela);
+                            Console.ReadKey();
+                            break;
+                        case 2:
+                            EscreverTela(ref tabela);
+                            Console.ReadKey();
+                            break;
+                        case 3:
+                            EscreverVerdadeiras(ref tabela);
+                            Console.ReadKey();
+                            break;
+                        case 4:
+                            TesteIndividual();
+                            break;
+                        case 0:
+                            Console.Write("\n Voce escolheu sair!");
+                            Console.ReadKey();
+                            break;
+                        default:
+                            Console.WriteLine("\n ERRO!!!");
+                            Console.WriteLine(" Digito invalido!\n");
+                            Console.ReadKey();
+                            break;
+                    }
+
+                    Console.Clear();
+                    #endregion
+
+                } while (op != 0);
+            }
         }
 
         #region METODOS DO MAIN
@@ -528,7 +534,7 @@ namespace TabelaVerdade
 
         #endregion
 
-        
+
 
     }
 

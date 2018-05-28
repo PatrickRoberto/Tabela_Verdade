@@ -43,13 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entradas.cs" />
+    <Compile Include="Enumeradores.cs" />
+    <Compile Include="Parametros.cs" />
     <Compile Include="Expressoes.cs" />
     <Compile Include="GerenciarTabVerdade.cs" />
     <Compile Include="Preposicao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tabela.cs" />
+    <Compile Include="Ultilitarios.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

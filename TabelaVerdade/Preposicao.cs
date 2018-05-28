@@ -9,14 +9,14 @@ namespace TabelaVerdade
 
     public class Preposicao
     {
-        List<Parametro> Entradas;
-        string expresao;
+        List<Parametro> preposicao;
+        //string expresao;
 
         public Preposicao(string expresao)
         {
             if (validar(expresao))
             {
-                Entradas = quebrarExpresao(expresao);
+                preposicao = quebrarExpresao(expresao);
             }
             else
             {
@@ -26,21 +26,42 @@ namespace TabelaVerdade
 
         }
 
+        
 
-        private List<Parametro> quebrarExpresao(string expresao)
+    #region Levar para outra classe
+        private List<Parametro> QuebrarExpresao(string expresao)
         {
-            //Expresão de teste
-            List<Parametro> ent = new List<Parametro>();
+            List<Parametro> saida = new List<Parametro>();
 
-            foreach (var item in expresao)
+            int inicio = 0;
+
+            string texto = expresao.Replace(" ", "");
+            for (int i = 0; i < texto.Length; i++)
             {
+                switch (texto[i])
+                {
+                    case '^':
+                    case 'v':
+                    case '~':
+                    case ')':
+                        saida.Add(new ParEntr(texto.Substring(inicio, i - inicio)));
+                        saida.Add(new ParOperacao(Ultilitarios.RetornaOperacao(texto[i])));
+                        inicio = i + 1;
+                        break;
+                    case '(':
+                        //saida.Add(texto[i] + ""); TRATAR PARA ADICIONAR UMA SUB PREPOSIÇÃO NESTE TRECHO
+                        inicio = i + 1;
+                        break;
 
+                    default: break;
+
+                }
             }
-
+            
             throw new NotImplementedException();
         }
 
-        public bool validar(string e)
+        public bool Validar(string e)
         {
             throw new NotImplementedException();
         }
@@ -48,7 +69,7 @@ namespace TabelaVerdade
         public int QtdOperecoes()
         {
             int x = 0;
-            foreach (var ent in Entradas)
+            foreach (var ent in preposicao)
             {
                 switch(ent.tipo)
                 {
@@ -63,6 +84,8 @@ namespace TabelaVerdade
             }
             return x;
         }
+    #endregion
 
+    
     }
 }
