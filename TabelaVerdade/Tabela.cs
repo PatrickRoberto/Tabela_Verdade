@@ -6,31 +6,13 @@ using System.Threading.Tasks;
 
 namespace TabelaVerdade
 {
-    class Entrada
-    {
-        public string Id { get; }
-        bool? valor;
-
-        public void FixarValor(bool v)
-        {
-            this.valor = v;
-        }
-
-        public void reiniciarValor()
-        {
-            this.valor = null;
-        }
-
-    }
-
-
     class Tabela
     {
         Entrada[] entradas;
         bool[,] tab;
         int qtdLinha, qtdColuna;
 
-
+    #region Construtores
         public Tabela(int colunas)
         {
             this.qtdLinha = CalcularLinhas(colunas);
@@ -45,7 +27,7 @@ namespace TabelaVerdade
             throw new NotImplementedException();
         }
 
-
+    #endregion
 
 
         private void MontarTabela(bool[,] tab)

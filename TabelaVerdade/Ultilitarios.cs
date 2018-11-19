@@ -18,10 +18,10 @@ namespace TabelaVerdade
                     return TipOperacoes.AND;
                 case 'v':
                     return TipOperacoes.OR;
-                //case '~':
-                //    return TipOperacoes.NOT;
-                //case '~':
-                //    return TipOperacoes.NOT;
+                //case '':
+                //    return TipOperacoes;
+                //case '':
+                //    return TipOperacoes;
                 default: throw new Exception(); //Criar exception de não identificado
             }
         }
@@ -79,6 +79,23 @@ namespace TabelaVerdade
                     throw new Exception(); //Criar exception de não identificado
             }
         }
+
+        public static void EntradaValorListEntrada(this List<Entrada> entrs, List<bool> novaEntrs)
+        {
+            if (entrs.Count < novaEntrs.Count)
+            {
+                for (int i = 0; i < entrs.Count; i++)
+                {
+                    entrs[i].FixarValor(novaEntrs[i]);
+                }
+                throw new Exception(); //Criar exceção para quando vieram mais entradas novas que minha lista de entradas
+            }
+            else
+            {
+                throw new Exception(); //Criar exceção para quando a lista de entradas for maior que a nova lista de entradas
+            }
+        }
+
 
     }
 }

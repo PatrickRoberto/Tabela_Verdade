@@ -28,27 +28,27 @@ namespace TabelaVerdade
 
     public class ParEntr : Parametro
     {
-        string valor { get; }
+        string Valor { get; }
 
         public ParEntr(string nValor) : base(TipParametro.valor)
         {
-            this.valor = nValor;
+            this.Valor = nValor;
         }
 
         public override string Imprimir()
         {
-            return valor;
+            return Valor;
             throw new NotImplementedException();
         }
     }
 
     public class ParValor : Parametro
     {
-        bool valor { get; }
+        bool Valor { get; }
 
         public ParValor(bool nValor) : base(TipParametro.valor)
         {
-            this.valor = nValor;
+            this.Valor = nValor;
         }
 
         public override string Imprimir()
@@ -60,11 +60,11 @@ namespace TabelaVerdade
 
     public class ParOperacao : Parametro
     {
-        TipOperacoes valor { get; }
+        TipOperacoes Valor { get; }
 
         public ParOperacao(TipOperacoes nValor) : base(TipParametro.operacao)
         {
-            this.valor = nValor;
+            this.Valor = nValor;
         }
 
         public override string Imprimir()
@@ -76,11 +76,11 @@ namespace TabelaVerdade
 
     public class ParPreposicao : Parametro
     {
-        Preposicao valor { get; }
+        Preposicao Valor { get; }
 
         public ParPreposicao(Preposicao nValor) : base(TipParametro.preposica)
         {
-            this.valor = nValor;
+            this.Valor = nValor;
         }
 
         public override string Imprimir()
@@ -89,9 +89,9 @@ namespace TabelaVerdade
             throw new NotImplementedException();
         }
 
-        public Preposicao Valor()
+        public Preposicao valor()
         {
-            return valor;
+            return Valor;
         }
     }
 

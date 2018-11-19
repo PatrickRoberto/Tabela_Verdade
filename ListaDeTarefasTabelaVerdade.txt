@@ -1,0 +1,41 @@
+Classe preposição
+	- Calcular o resultado de uma preposição
+	
+Gerenciar Preposicao	
+	- Converter uma string em uma preposição
+	- Resolver uma preposição a partir de uma lista/vetor de valores
+	
+	Secundarios:
+		- retornar quantidade de entradas
+		- Retornar lista de operações
+		- Retornar preposicao partida
+		
+	
+Tabela
+	- Montar as possibilidades de uma tabela Verdade para x entradas
+	
+Gerencia Tabela
+	- Adicionar a tabela as colunas com o resultado de cada parte da preposição
+	- Listar resultados
+	- Entradas que gera um resultado
+	- Resultados com uma das entras expecificas
+	
+	Secundarios:
+		- Devolver a lista de entradas que gera um resultado especifico
+		- Devolver lista de resultados para valores fixos
+		
+Operacoes
+	- Retorna o resultado de uma operação
+
+Execeções
+	- Criar as execeções que seram retornadas a médida que erros vão sendo identificdos
+	Lista de exceções:
+		
+		
+Interface de USO
+	- Criar preposição
+	- Usar preposicao com lista de strings
+	- Retornar resultados
+	- Usar as opções de calculos possiveis
+	- Salvar resultados
+	

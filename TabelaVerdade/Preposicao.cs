@@ -14,9 +14,9 @@ namespace TabelaVerdade
 
         public Preposicao(string expresao)
         {
-            if (validar(expresao))
+            if (Validar(expresao))
             {
-                preposicao = quebrarExpresao(expresao);
+                preposicao = QuebrarExpresao(expresao);
             }
             else
             {
@@ -36,6 +36,7 @@ namespace TabelaVerdade
             int inicio = 0;
 
             string texto = expresao.Replace(" ", "");
+            
             for (int i = 0; i < texto.Length; i++)
             {
                 switch (texto[i])
@@ -61,6 +62,8 @@ namespace TabelaVerdade
             throw new NotImplementedException();
         }
 
+        
+
         public bool Validar(string e)
         {
             throw new NotImplementedException();
@@ -77,7 +80,7 @@ namespace TabelaVerdade
                         x++;
                         break;
                     case TipParametro.preposica:
-                        x += ((ParPreposicao)ent).Valor().QtdOperecoes();
+                        x += ((ParPreposicao)ent).valor().QtdOperecoes();
                         break;
                     default: break;
                 }
@@ -87,5 +90,15 @@ namespace TabelaVerdade
     #endregion
 
     
+    }
+
+    class GerenciarPrep
+    {
+        List<Entrada> entradas;
+        Preposicao prep;
+
+        
+
+        
     }
 }
